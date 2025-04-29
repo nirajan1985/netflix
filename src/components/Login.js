@@ -8,11 +8,10 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -56,7 +55,6 @@ const Login = () => {
                 displayName: displayName,
               })
             );
-            navigate("/browse");
           });
         })
         .catch((error) => {
@@ -73,7 +71,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed in
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -88,7 +85,7 @@ const Login = () => {
   };
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <div
         className="min-h-screen bg-cover bg-center flex items-center justify-center"
         style={{
