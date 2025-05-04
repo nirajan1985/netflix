@@ -11,3 +11,5 @@ export const API_OPTIONS = {
     Authorization: process.env.REACT_APP_ACCESS_TOKEN,
   },
 };
+
+export const IMG_URL = "https://image.tmdb.org/t/p/w500";
